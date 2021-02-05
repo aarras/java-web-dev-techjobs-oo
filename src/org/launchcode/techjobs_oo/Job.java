@@ -1,6 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import java.lang.reflect.Field;
 import java.util.Objects;
 
 public class Job {
@@ -38,13 +37,13 @@ public class Job {
         String aPositionType = this.positionType.getValue();
         String aCoreCompetency = this.coreCompetency.getValue();
 
-        if (aName == "" || aName == null) { aName = "Data not available"; }
-        if (aEmployer == "" || aEmployer == null) { aEmployer = "Data not available"; }
-        if (aLocation == "" || aLocation == null) { aLocation = "Data not available"; }
-        if (aPositionType == "" || aPositionType == null) { aPositionType = "Data not available"; }
-        if (aCoreCompetency == "" || aCoreCompetency == null) { aCoreCompetency = "Data not available"; }
+        if (aName.equals("")) { aName = "Data not available"; }
+        if (aEmployer.equals("")) { aEmployer = "Data not available"; }
+        if (aLocation.equals("")) { aLocation = "Data not available"; }
+        if (aPositionType.equals("")) { aPositionType = "Data not available"; }
+        if (aCoreCompetency.equals("")) { aCoreCompetency = "Data not available"; }
 
-        if (aName == "Data not available" && aEmployer == "Data not available" && aLocation == "Data not available" && aPositionType == "Data not available" && aCoreCompetency == "Data not available") {
+        if (aName.equals("Data not available") && aEmployer.equals("Data not available") && aLocation.equals("Data not available") && aPositionType.equals("Data not available") && aCoreCompetency.equals("Data not available")) {
             return "OOPS! This job does not seem to exist.";
         } else {
             return "\nID: " + id +
