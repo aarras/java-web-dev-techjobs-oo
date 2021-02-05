@@ -32,28 +32,22 @@ public class Job {
     @Override
     public String toString() {
         String aName = this.name;
-        String aEmployer = this.employer.getValue();
-        String aLocation = this.location.getValue();
-        String aPositionType = this.positionType.getValue();
-        String aCoreCompetency = this.coreCompetency.getValue();
+        String errorMessage = "Data not available";
 
-        if (aName.equals("")) { aName = "Data not available"; }
-        if (aEmployer.equals("")) { aEmployer = "Data not available"; }
-        if (aLocation.equals("")) { aLocation = "Data not available"; }
-        if (aPositionType.equals("")) { aPositionType = "Data not available"; }
-        if (aCoreCompetency.equals("")) { aCoreCompetency = "Data not available"; }
+        if(this.name.equals("")) { aName = errorMessage; }
 
-        if (aName.equals("Data not available") && aEmployer.equals("Data not available") && aLocation.equals("Data not available") && aPositionType.equals("Data not available") && aCoreCompetency.equals("Data not available")) {
+        if(aName.equals(errorMessage) && this.employer.equals(errorMessage) && this.location.equals(errorMessage) && this.positionType.equals(errorMessage) && this.coreCompetency.equals(errorMessage)) {
+
             return "OOPS! This job does not seem to exist.";
-        } else {
-            return "\nID: " + id +
-                    "\nName: " + aName +
-                    "\nEmployer: " + aEmployer +
-                    "\nLocation: " + aLocation +
-                    "\nPosition Type: " + aPositionType +
-                    "\nCore Competency: " + aCoreCompetency +
-                    '\n';
         }
+
+        return "\nID: " + id +
+                "\nName: " + aName +
+                "\nEmployer: " + this.employer +
+                "\nLocation: " + this.location +
+                "\nPosition Type: " + this.positionType +
+                "\nCore Competency: " + this.coreCompetency +
+                '\n';
     }
 
     @Override

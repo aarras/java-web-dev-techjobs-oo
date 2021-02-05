@@ -8,12 +8,12 @@ import static org.junit.Assert.*;
 
 public class JobTest {
 
-    Job test_job1;
-    Job test_job2;
-    Job test_job3;
-    Job test_job4;
-    Job test_job5;
-    Job test_job6;
+    private Job test_job1;
+    private Job test_job2;
+    private Job test_job3;
+    private Job test_job4;
+    private Job test_job5;
+    private Job test_job6;
 
     @Before
     public void createJobObjects() {
@@ -21,14 +21,12 @@ public class JobTest {
         test_job2 = new Job();
         test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        test_job5 = new Job("Product tester", new Employer(""), new Location(null), new PositionType(""), new CoreCompetency(null));
-        test_job6 = new Job("", new Employer(""), new Location(null), new PositionType(""), new CoreCompetency(null));
+        test_job5 = new Job("Product tester", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        test_job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     }
 
     @Test
     public void testSettingJobId() {
-        //test_job1 = new Job();
-        //test_job2 = new Job();
 
         assertEquals(1, test_job1.getId());
         assertEquals(2, test_job2.getId());
@@ -36,7 +34,6 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        //Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertTrue(test_job3 instanceof Job);
         assertTrue(test_job3.getEmployer() instanceof Employer);
@@ -53,8 +50,6 @@ public class JobTest {
 
     @Test
     public void testJobsForEquality() {
-        // Job test_job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        //Job test_job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertFalse(test_job3.equals(test_job4));
     }

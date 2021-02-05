@@ -21,7 +21,10 @@ public abstract class JobField {
     // Custom toString, equals, and hashCode methods:
 
     @Override
-    public String toString() { return value; }
+    public String toString() {
+    if(value.equals("")) {
+        return "Data not available";
+    } else return value; }
 
     @Override
     public boolean equals(Object o) {  // Two objects are equal if they have the same id.
