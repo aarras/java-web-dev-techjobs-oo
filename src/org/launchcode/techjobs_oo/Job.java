@@ -36,7 +36,7 @@ public class Job {
 
         if(this.name.equals("")) { aName = errorMessage; }
 
-        if(aName.equals(errorMessage) && this.employer.equals(errorMessage) && this.location.equals(errorMessage) && this.positionType.equals(errorMessage) && this.coreCompetency.equals(errorMessage)) {
+        if(aName.equals(errorMessage) && this.employer.toString().equals(errorMessage) && this.location.toString().equals(errorMessage) && this.positionType.toString().equals(errorMessage) && this.coreCompetency.toString().equals(errorMessage)) {
 
             return "OOPS! This job does not seem to exist.";
         }
